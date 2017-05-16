@@ -35,4 +35,18 @@ public class ArrayAsociativo {
 	}
 	
 	//Métodos de instancia
+	public  int size(){
+		int res=0;
+		if(primero == null){
+			res=0;
+		}else {
+			while(primero.sig != null){
+				res++;
+				primero=primero.sig;
+			}
+		
+			
+		}
+		return res;
+	}
 }
