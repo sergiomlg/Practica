@@ -40,7 +40,8 @@ public class ArrayAsociativo {
 		if(primero == null){
 			res=0;
 		}else {
-			while(primero.sig != null){
+			
+			while(primero != null){
 				res++;
 				primero=primero.sig;
 			}
