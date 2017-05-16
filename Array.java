@@ -15,6 +15,10 @@ public class Array {
 	public void ArraySizeNoes0(){
 		assertEquals(new Integer(1), new Integer((new ArrayAsociativo(claves,valores)).size()));
 	}
+	@Test
+	public void GetArrayVacio(){
+		assertEquals(null,new ArrayAsociativo().get("Hola"));
+	}
 	
 
 }

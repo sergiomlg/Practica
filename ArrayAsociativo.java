@@ -50,4 +50,13 @@ public class ArrayAsociativo {
 		}
 		return res;
 	}
+	public String get(String clave){
+		String res=null;
+		if(this.size()==0){
+			res=null;
+		}
+		return res;
+	}
+	
+	
 }
