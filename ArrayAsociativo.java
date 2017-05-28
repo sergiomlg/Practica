@@ -87,6 +87,24 @@ public void put(String clave, String valor){
 		primero.valor=valor;	
 	}
 }
+public String getOrElse(String clave, String valorPorDefecto){
+	boolean ok=false;
+	
+	while(primero!=null && !ok){
+		if(primero.clave==clave){
+			ok=true;
+		}else{
+			primero=primero.sig;
+		}
+	}
+	if(ok){
+		return primero.valor;
+	}else{
+		return valorPorDefecto;
+	}
+	
+	
+}
 	
 	
 }

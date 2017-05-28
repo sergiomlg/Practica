@@ -52,6 +52,27 @@ public class Array {
 		a.put("aaa","adios");
 		assertEquals(new String("adios"),new String(a.get("aaa")));
 	}
+	@Test
+	public void testgetOrElseVacio() {
+		ArrayAsociativo a = new ArrayAsociativo();
+		assertEquals(new String("defecto"),new String(a.getOrElse("hola","defecto")));
+	}
+	
+	@Test
+	public void testgetOrElseEncontrado() {
+		String[] claves = {"aaa"};
+		String[] valores = {"bbb"};
+		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
+		assertEquals(new String("bbb"),new String(a.getOrElse("aaa", "defecto")));
+	}
+	
+	@Test
+	public void testgetOrElseNoEncontrado() {
+		String[] claves = {"aaa"};
+		String[] valores = {"bbb"};
+		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
+		assertEquals(new String("defecto"),new String(a.getOrElse("bbb", "defecto")));
+	}
 	
 
 }
