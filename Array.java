@@ -35,6 +35,23 @@ public class Array {
 		a.put("hola","adios");
 		assertEquals(new String("adios"),new String(a.get("hola")));
 	}
+	@Test
+	public void testInsertaConElem() {
+		String[] claves = {"aaa"};
+		String[] valores = {"bbb"};
+		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
+		a.put("hola","adios");
+		assertEquals(new String("adios"),new String(a.get("hola")));
+	}
+	
+	@Test
+	public void testInsertaDuplicado() {
+		String[] claves = {"aaa"};
+		String[] valores = {"bbb"};
+		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
+		a.put("aaa","adios");
+		assertEquals(new String("adios"),new String(a.get("aaa")));
+	}
 	
 
 }
