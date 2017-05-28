@@ -117,6 +117,28 @@ public boolean containsKey(String clave){
 	}
 	return ok;
 }
+public boolean remove(String clave){
+	boolean encontrado=false;
+	Nodo anterior=null;
+	while(primero!=null && !encontrado){
+		anterior=primero;
+		if(primero.clave==clave){
+			encontrado=true;
+		}
+		primero=primero.sig;
+	}
+	
+	if(encontrado){
+		if(primero==null){
+			anterior.sig=null;
+		}else{
+			anterior.sig=primero.sig;
+		}
+	}
+	
+	
+	return encontrado;
+}
 	
 	
 }
