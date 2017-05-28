@@ -105,6 +105,18 @@ public String getOrElse(String clave, String valorPorDefecto){
 	
 	
 }
+public boolean containsKey(String clave){
+	
+	boolean ok=false;
+	while(primero!=null && !ok){
+		if(primero.clave==clave){
+			ok=true;
+		}else{
+			primero=primero.sig;
+		}
+	}
+	return ok;
+}
 	
 	
 }

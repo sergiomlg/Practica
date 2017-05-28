@@ -74,5 +74,27 @@ public class Array {
 		assertEquals(new String("defecto"),new String(a.getOrElse("bbb", "defecto")));
 	}
 	
+	@Test
+	public void containsKeyVacio() {
+		ArrayAsociativo a = new ArrayAsociativo();
+		assertFalse(a.containsKey("hola"));
+	}
+	
+	@Test
+	public void containsKeyFallo() {
+		String[] claves = {"aaa"};
+		String[] valores = {"bbb"};
+		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
+		assertFalse(a.containsKey("hola"));
+	}
+	
+	@Test
+	public void containsKeyAcierto() {
+		String[] claves = {"aaa"};
+		String[] valores = {"bbb"};
+		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
+		assertTrue(a.containsKey("aaa"));
+	}
+	
 
 }
