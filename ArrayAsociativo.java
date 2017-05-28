@@ -1,4 +1,4 @@
-
+import java.util.NoSuchElementException;
 
 public class ArrayAsociativo {
 	//Clases internas
@@ -50,12 +50,23 @@ public class ArrayAsociativo {
 		}
 		return res;
 	}
-	public String get(String clave){
-		String res=null;
-		if(this.size()==0){
-			res=null;
+public String get(String clave){
+		
+		boolean encontrado=false;
+
+		while(primero != null && !encontrado){
+			if(primero.clave==clave){
+				encontrado=true;
+			}else{
+				primero=primero.sig;
+			}
 		}
-		return res;
+		if(encontrado){//encontrado
+			return primero.valor;
+		}
+		else{
+			return null;
+		}
 	}
 	
 	
