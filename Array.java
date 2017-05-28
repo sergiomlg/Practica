@@ -27,6 +27,14 @@ public class Array {
 		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
 		assertTrue("Iguales", new String("adios").equals(a.get("hola")));
 	}
+	@Test
+	public void testInsertaVacio() {
+		String[] claves = {};
+		String[] valores = {};
+		ArrayAsociativo a = new ArrayAsociativo(claves,valores);
+		a.put("hola","adios");
+		assertEquals(new String("adios"),new String(a.get("hola")));
+	}
 	
 
 }

@@ -68,6 +68,25 @@ public String get(String clave){
 			return null;
 		}
 	}
+public void put(String clave, String valor){
+	boolean repe=false;
+	
+	while(primero!=null && !repe){
+		if(primero.clave==clave){
+			repe=true;
+		}else{
+			primero=primero.sig;
+		}
+	}
+	
+	if(!repe){				
+		Nodo nuevo=new Nodo(clave,valor,null);
+		primero=nuevo;
+		
+	}else{
+		primero.valor=valor;	
+	}
+}
 	
 	
 }
